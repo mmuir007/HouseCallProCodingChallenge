@@ -1,6 +1,7 @@
 package com.iconplc.pageObjects;
 
 import com.iconplc.enums.CustomerLocationType;
+import com.iconplc.util.Logger;
 import dev.failsafe.internal.util.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -8,7 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.tinylog.Logger;
 
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;

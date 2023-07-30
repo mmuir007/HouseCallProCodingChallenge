@@ -4,6 +4,8 @@ import com.github.javafaker.Faker;
 import com.github.javafaker.service.FakeValuesService;
 import com.github.javafaker.service.RandomService;
 import com.iconplc.pageObjects.*;
+import com.iconplc.util.LogLevel;
+import com.iconplc.util.Logger;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +13,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import org.tinylog.Logger;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -32,6 +33,9 @@ public class CodingChallengeTest {
 
     @BeforeMethod
     public void init() {
+        // set up Logger
+        Logger.setLogLevel( LogLevel.INFO );
+
         Logger.info("Setting up the CodingChallengeTest driver");
         driver = new ChromeDriver();
         driver.manage().timeouts().pageLoadTimeout( Duration.of(60L, ChronoUnit.SECONDS ) );

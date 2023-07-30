@@ -1,9 +1,8 @@
 package com.iconplc.pageObjects;
 
-import org.apache.commons.io.FileUtils;
+import com.iconplc.util.Logger;
 import org.openqa.selenium.*;
 import org.testng.Assert;
-import org.tinylog.Logger;
 
 import java.util.List;
 

@@ -1,10 +1,10 @@
 package com.iconplc.pageObjects;
 
+import com.iconplc.util.Logger;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.tinylog.Logger;
 
 import java.io.File;
 import java.io.IOException;
@@ -39,9 +39,9 @@ public abstract class BasePO {
         File source = screenshot.getScreenshotAs( OutputType.FILE );
         try {
             FileUtils.copyFile( source, new File( fileName ) );
-            Logger.error("WROTE SCREENSHOT TO Screen.png");
+            Logger.error("WROTE SCREENSHOT TO " + fileName );
         } catch( IOException ioe ) {
-            System.err.println( "ERROR " + ioe.getMessage() );
+            Logger.error( ioe.getMessage() );
             ioe.printStackTrace( System.err );
         }
     }
